@@ -5,7 +5,8 @@
 </p>
 
 <p align="center">
-  A fast & lightweight react component as a drop in replacement for HTML5 input range slider element.
+  A fast & lightweight react component as a drop in replacement for HTML5 input range slider element.<br>
+  keepTooltip prop available.
 </p>
 
 <p align="center">
@@ -30,13 +31,13 @@
 Using `npm` (use `--save` to include it in your package.json)
 
 ```bash
-$ npm install react-rangeslider --save
+$ npm install react-rangeslider-withkeeptooltip --save
 ```
 
-Using `yarn` (this command also adds react-rangeslider to your package.json dependencies)
+Using `yarn` (this command also adds react-rangeslider-withkeeptooltip to your package.json dependencies)
 
 ```bash
-$ yarn add react-rangeslider
+$ yarn add react-rangeslider-withkeeptooltip
 ```
 
 
@@ -47,13 +48,13 @@ With a module bundler like webpack that supports either CommonJS or ES2015 modul
 
 ```js
 // Using an ES6 transpiler like Babel
-import Slider from 'react-rangeslider'
+import Slider from 'react-rangeslider-withkeeptooltip'
 
 // To include the default styles
-import 'react-rangeslider/lib/index.css'
+import 'react-rangeslider-withkeeptooltip/lib/index.css'
 
 // Not using an ES6 transpiler
-var Slider = require('react-rangeslider')
+var Slider = require('react-rangeslider-withkeeptooltip')
 ```
 
 The UMD build is also available on [unpkg][unpkg]:
@@ -72,7 +73,7 @@ Check out [docs & examples](https://whoisandy.github.io/react-rangeslider).
 
 ```jsx
 import React, { Component } from 'react'
-import Slider from 'react-rangeslider'
+import Slider from 'react-rangeslider-withkeeptooltip'
 
 class VolumeSlider extends Component {
   constructor(props, context) {
@@ -118,6 +119,7 @@ import Slider from 'react-rangeslider'
   orientation={String}
   reverse={Boolean}
   tooltip={Boolean}
+  keepTooltip={Boolean}
   labels={Object}
   handleLabel={String}
   format={Function}
@@ -136,13 +138,14 @@ Prop   	 			 |  Type      |  Default      |  Description
 `value`        |  number    |               |  current value of the slider
 `orientation`  |  string    |  horizontal   |  orientation of the slider
 `tooltip`      |  boolean   |  true         |  show or hide tooltip
+`keepTooltip`  |  boolean   |  false        |  keep tooltip showing without focus
 `reverse`  		 |  boolean   |  false			  |  reverse direction of vertical slider (top-bottom)
 `labels`       |  object    |  {}           |  object containing key-value pairs. `{ 0: 'Low', 50: 'Medium', 100: 'High'}`
 `handleLabel`  |  string    |  ''           |  string label to appear inside slider handles
-`format`     |  function  |               |  function to format and display the value in label or tooltip
-`onChangeStart`  	 |  function  |               |  function gets called whenever the user starts dragging the slider handle
+`format`       |  function  |               |  function to format and display the value in label or tooltip
+`onChangeStart`|  function  |               |  function gets called whenever the user starts dragging the slider handle
 `onChange`  	 |  function  |               |  function gets called whenever the slider handle is being dragged or clicked
-`onChangeComplete`     |  function  |               |  function gets called whenever the user stops dragging the slider handle.
+`onChangeComplete`| function|            |  function gets called whenever the user stops dragging the slider handle.
 
 
 ## Development
